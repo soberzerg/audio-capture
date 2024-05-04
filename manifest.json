@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "Chrome Audio Capture",
   "description": "This extension captures the audio on the current tab and saves the output file on your computer when the capture is complete",
@@ -15,13 +15,13 @@
   },
   "options_page": "options.html",
   "background": {
-    "scripts": ["background.js", "worker.js"],
-    "persistent": true
+    "service_worker": "service_worker.js",
+    "type": "module"
   },
   "permissions": [
-    "tabCapture",
+    "tabs",
     "downloads",
-    "storage"
+    "unlimitedStorage"
   ],
   "commands": {
     "start": {
